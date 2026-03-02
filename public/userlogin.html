@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: "Stack Sans Headline", sans-serif;
+            background-color: black;
+        }
+
+        .Cartify {
+            font-family: "Momo Trust Display", sans-serif;
+            color: white;
+            font-size: 55px;
+            margin-left: 15px;
+        }
+
+        .mainflex {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 98vh;
+
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        form input {
+            padding: 7px;
+            width: 250px;
+            background-color: white;
+        }
+
+        .borderclass {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 300px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .caption {
+            color: white;
+        }
+
+        .impinfo {
+            color: white;
+            width: 340px;
+            font-size: 13px;
+            margin-left: 70px;
+        }
+
+        .logindetails {
+            background-color: black;
+        }
+
+        .signup {
+            padding: 10px;
+            padding-right: 15px;
+            padding-left: 15px;
+            color: black;
+            background-color: white;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        a {
+            font-family: "Momo Trust Display", sans-serif;
+            color: white;
+            text-decoration: none;
+        }
+
+        .spantwo {
+            color: white;
+            height: 20px;
+        }
+
+        .login {
+            padding: 8px;
+            padding-right: 25px;
+            padding-left: 25px;
+            color: black;
+            background-color: white;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .signup1 {
+            padding: 8px;
+            padding-right: 25px;
+            padding-left: 25px;
+            color: black;
+            background-color: white;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .hidden {
+            display: none;
+        }.hello
+        {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loginpage">
+        <div class="logindetails">
+            <div class="mainflex">
+                <div class="Cartify">
+                    <a href="/">Cartify</a>
+                </div>
+                <div class="userloginpanel">
+                    <div class="cardpanel">
+                        <div class="flexcol">
+                            <div class="borderclass">
+                                <div class="flex">
+                                    <button class="login" id="loginBtn1">Log in</button><span class="spantwo"> |</span>
+                                    <button class="signup1" id="signupBtn1">Sign Up</button>
+                                </div>
+                                <div class="caption" id="formCaption">
+                                    Sign up to discover amazing deals
+                                </div>
+                                <form id="userForm">
+                                    <input type="text" placeholder="Enter Your Email Address" id="emailField">
+                                    <input type="password" placeholder="Password" id="passwordField">
+                                    <input type="text" placeholder="Full Name" id="nameField">
+                                    <input type="text" placeholder="Username" id="usernameField">
+                                </form>
+                                <div class="impinfo" id="imp1">
+                                    People who use our service may have uploaded your contact information to Cartify
+                                </div>
+                                <div class="impinfo" id="imp2">
+                                    By signing up, you agree to our Terms, Privacy Policy and Cookies Policy.
+                                </div>
+                                <div class="flex">
+                                    <button class="signup" id="submitBtn2">Sign Up</button>
+                                    <button class="signup" id="loginBtn2">Log in</button>
+                                </div>
+                                <p id="message" style="color: green; font-weight: bold;"></p>
+                                <a href="payment.html"><p class="hello" id="payment"></p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="black">
+            </div>
+        </div>
+    </div>
+    <script src="userlogin.js"></script>
+</body>
+
+</html>

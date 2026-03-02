@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
+        * {
+            padding: 2px;
+            margin: 2px;
+            font-family: "Stack Sans Headline", sans-serif;
+        }
+
+        .shoppingcart {
+            font-size: 25px;
+            font-family: "Momo Trust Display", sans-serif;
+        }
+
+        .img img {
+            margin-top: 37px;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .instock {
+            font-size: 14px;
+            color: green;
+        }
+
+        .free {
+            font-size: 14px;
+            color: grey;
+        }
+
+        .buy-now-btn {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border-radius: 30px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .flexxcol {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .ruppes {
+            font-size: 23px;
+        }
+
+        .quantity-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .quantity-box button {
+            border: none;
+            padding: 5px 10px;
+            font-size: 18px;
+            background: black;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .qty-value {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cart">
+        <div class="cartdetails">
+            <div class="carddetails">
+                <div class="mainflex">
+                    <div class="shoppingcart">
+                        Shopping Cart
+                    </div>
+                    <div class="maincontent">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="cart.js"></script>
+</body>
+
+</html>

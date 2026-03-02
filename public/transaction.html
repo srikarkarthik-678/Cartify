@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Stack Sans Headline", sans-serif;
+        }
+
+        body {
+            background: black;
+            display: flex;
+            justify-content: center;
+            padding: 40px 10px;
+        }
+
+        .payment-box {
+            background: black;
+            color: white;
+            width: 90%;
+            max-width: 900px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .methods {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .method {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #dedede;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s ease;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+
+        .method:hover {
+            background: white;
+            color: black;
+        }
+
+        .pay-section {
+            margin-top: 20px;
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .pay-section.active {
+            display: flex;
+        }
+
+        input {
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid #cfcfcf;
+            width: 100%;
+        }
+
+        .card-flex {
+            display: flex;
+            gap: 10px;
+        }
+
+        .pay-btn {
+            margin-top: 10px;
+            padding: 16px;
+            border-radius: 12px;
+            background: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="payment-box">
+
+        <div class="title">Complete Payment</div>
+
+        <div class="methods">
+            <div class="method active" data-type="upi">UPI</div>
+            <div class="method" data-type="card">Debit Card</div>
+            <div class="method" data-type="credit">Credit Card</div>
+        </div>
+        <div class="pay-section active" id="upi">
+            <input type="text" placeholder="Enter UPI ID (example@upi)">
+            <button class="pay-btn">Pay ₹40.00</button>
+        </div>
+        <div class="pay-section" id="card">
+            <input type="text" placeholder="Card Number">
+            <div class="card-flex">
+                <input type="text" placeholder="MM/YY">
+                <input type="text" placeholder="CVV">
+            </div>
+            <input type="text" placeholder="Card Holder Name">
+            <button class="pay-btn">Pay ₹40.00</button>
+        </div>
+        <div class="pay-section" id="credit">
+            <input type="text" placeholder="Card Number">
+            <div class="card-flex">
+                <input type="text" placeholder="MM/YY">
+                <input type="text" placeholder="CVV">
+            </div>
+            <input type="text" placeholder="Card Holder Name">
+            <button class="pay-btn">Pay ₹40.00</button>
+        </div>
+
+    </div>
+
+    <script>
+        async function LoadPrice() {
+        const res = await fetch("/total", { credentials: "include" });
+        const data = await res.json();
+        const amount = data.total || 0;
+        document.querySelectorAll(".pay-btn").forEach(btn => {
+            btn.textContent = `Pay ₹${amount}`;
+        });
+        }
+        LoadPrice()
+        const buttons = document.querySelectorAll(".method");
+        const sections = document.querySelectorAll(".pay-section");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+
+                buttons.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                const type = btn.dataset.type;
+
+                sections.forEach(sec => sec.classList.remove("active"));
+                document.getElementById(type).classList.add("active");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

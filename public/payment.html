@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Stack Sans Headline", sans-serif;
+        }
+
+        /* -------- Main Two-Column Layout -------- */
+        .paymentdetails {
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            background-color: black;
+        }
+
+        .paymentcontent {
+            display: flex;
+            background: #ffffff;
+            width: 90%;
+            max-width: 1200px;
+            border-radius: 20px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* -------- Left Side Checkout Form -------- */
+        .leftside {
+            width: 60%;
+            background-color: black;
+            color: white;
+            padding: 40px;
+        }
+
+        .payment {
+            font-family: "Momo Trust Display", sans-serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .paymentportal {
+            padding: 0;
+        }
+
+        .shippinginfo {
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .flexcol {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 14px;
+            font-size: 15px;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            outline: none;
+            background: #fafafa;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #4A5FFF;
+        }
+
+        .flex {
+            display: flex;
+            gap: 10px;
+        }
+
+        .flex input {
+            width: 100%;
+        }
+
+        /* Checkbox row */
+        .flex1 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flex1 input {
+            width: 18px;
+            height: 18px;
+        }
+
+        .rightside {
+            width: 40%;
+            background-color: black;
+            color: white;
+            padding: 40px;
+            border-left: 1px solid white;
+        }
+        .cart-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        .cart-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cart-row {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .cart-row img {
+            width: 70px;
+            border-radius: 10px;
+        }
+
+        .cart-info p {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .cart-info span {
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        .amount {
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        /* Discount Box */
+        .discount-box {
+            display: flex;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .discount-box input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #cccccc;
+        }
+
+        .discount-box button {
+            padding: 12px 18px;
+            border: none;
+            background: white;
+            color: black;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .summary {
+            margin-top: 15px;
+        }
+
+        .summary p {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+        }
+
+        .summary hr {
+            margin: 15px 0;
+        }
+
+        .summary .total {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .paynow {
+            width: 100%;
+            background: white;
+            color: black;
+            padding: 15px;
+            border-radius: 12px;
+            border: none;
+            margin-top: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .secure {
+            margin-top: 20px;
+            font-size: 13px;
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .cartify
+        {
+           
+            font-size: 30px;
+        }
+        .navbar
+        {
+            background-color: black;
+            color: white;
+            display: flex;
+            padding-left: 30px;
+            padding-right: 30px;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .user
+        {
+            font-size: 18px;
+        }
+        .cartify a
+        {
+             font-family: "Momo Trust Display", sans-serif;
+             text-decoration: none;
+             color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Paymentknow">
+        <div class="navbar">
+            <div class="cartify">
+                <a href="/">Cartify</a>
+            </div>
+            <div class="user">
+                User
+            </div>
+        </div>
+        <div class="paymentdetails">
+            <div class="paymentcontent">
+                <div class="leftside">
+                    <div class="payment">
+                        Checkout
+                    </div>
+                    <div class="paymentportal">
+                        <div class="flexcol">
+                            <div class="shippinginfo">
+                                Shipping Information
+                            </div>
+                            <div class="fullname">
+                                <input type="text" placeholder="Enter Your Full Name">
+                            </div>
+                            <div class="emailaddress">
+                                <input type="text" placeholder="Enter Your Email Address">
+                            </div>
+                            <div class="phoneneumber">
+                                <input type="number" placeholder="Enter Your Phone number">
+                            </div>
+                            <div class="country">
+                                <select name="" id="">
+                                    <option value="India">India</option>
+                                    <option value="U.S">U.S</option>
+                                    <option value="Turkey">Turkey</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Malaysia">Malaysia</option>
+                                    <option value="China">China</option>
+                                    <option value="Spain">Spain</option>
+                                </select>
+                            </div>
+                            <div class="flex">
+                                <input type="text" placeholder="Enter City">
+                                <input type="text" placeholder="Enter State">
+                                <input type="number" placeholder="Enter ZIP code">
+                            </div>
+                            <div class="flex1">
+                                <input type="checkbox" name="term">
+                                <label for="term">I have read and agreed to terms and conditions</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightside">
+                    <div class="cart-title">Review your cart</div>
+
+                   <div class="cart-items"></div>
+
+                    <div class="discount-box">
+                        <input type="text" placeholder="Discount code">
+                        <button>Apply</button>
+                    </div>
+
+                    <div class="summary">
+                        <p><span>Subtotal</span><span>₹3,199</span></p>
+                        <p><span>Shipping</span><span>250.00</span></p>
+                        <p><span>Discount</span><span>-₹999.00</span></p>
+                        <hr>
+                        <p class="total"><span>Total</span><span>₹2450.00</span></p>
+                    </div>
+                    <a href="transaction.html"><button class="paynow">Pay Now</button></a>
+                    <div class="secure">
+                        Secure Checkout - SSL Encrypted
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="payment.js"></script>
+</body>
+
+</html>
